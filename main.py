@@ -46,8 +46,8 @@ class Queue:
         """
         if not isinstance(ind, int):
             raise TypeError('Индекс элемента не типа integer!')
-        elem_to_check = self.my_queue[0]  # TODO реализовать метод peek
-        if ind < 0 or ind > len(self.my_queue) - 1:
+        elem_to_check = self.my_queue[ind]  # TODO реализовать метод peek
+        if ind < 0 or ind > len(self.my_queue) :
             raise IndexError('Индекс вне границ очереди!')
         return elem_to_check
 
@@ -65,4 +65,4 @@ if __name__ == '__main__':
     queue1 = Queue()
     queue1.enqueue(1)
     queue1.enqueue(2)
-    print(queue1.dequeue())
+    print(queue1.peek(2))
