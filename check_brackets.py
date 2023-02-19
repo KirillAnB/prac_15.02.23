@@ -6,10 +6,10 @@ def check_brackets(brackets_row: str) -> bool:
     list_ = []  # Список, в который будем добавлять скобки из проверяемой строки
     for char in brackets_row:
         if char == '(':  # Если скобка открывающая - добавляем
-            list_.append(char)  # LAST IN
+            list_.append(char)  # FIRST IN
         elif char == ')':  #  Если закрывающая - проверяем, что перед ней была открывающая
             if list_:
-                del list_[0]  # FIRST OUT
+                del list_[-1]  # FIRST OUT
             else:
                 return False
     if list_:  #  Если после проверки строки остались незакрытые скобки
